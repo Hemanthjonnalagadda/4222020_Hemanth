@@ -1,0 +1,13 @@
+def compute_min_max_sum(data):
+    highest = max(data)
+    lowest = min(data)
+    total_sum = sum(data)
+
+    smallest_possible = total_sum - highest
+    largest_possible = total_sum - lowest
+
+    print(f"{smallest_possible} {largest_possible}")
+
+if __name__ == "__main__":
+    values = list(map(int, input().strip().split()))
+    compute_min_max_sum(values)

@@ -1,0 +1,14 @@
+def analyze_numbers(numbers):
+    total = len(numbers)
+    positives = sum(1 for num in numbers if num > 0)
+    negatives = sum(1 for num in numbers if num < 0)
+    zeros = total - positives - negatives
+
+    print(f"{positives / total:.6f}")
+    print(f"{negatives / total:.6f}")
+    print(f"{zeros / total:.6f}")
+
+if __name__ == "__main__":
+    size = int(input().strip())
+    data = list(map(int, input().strip().split()))
+    analyze_numbers(data)

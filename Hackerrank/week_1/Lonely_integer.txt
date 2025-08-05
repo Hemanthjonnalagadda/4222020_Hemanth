@@ -1,0 +1,14 @@
+def get_single_number(data):
+    data.sort()
+    length = len(data)
+
+    if length == 1:
+        return data[0]
+    if data[0] != data[1]:
+        return data[0]
+    return get_single_number(data[2:])
+
+if __name__ == "__main__":
+    total = int(input())
+    values = list(map(int, input().split()))
+    print(get_single_number(values))

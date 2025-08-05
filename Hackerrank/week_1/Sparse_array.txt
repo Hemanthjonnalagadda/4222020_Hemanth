@@ -1,0 +1,24 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner reader = new Scanner(System.in);
+
+        int totalEntries = reader.nextInt();
+        HashMap<String, Integer> wordTracker = new HashMap<>();
+        for (int i = 0; i < totalEntries; i++) {
+            String word = reader.next();
+            wordTracker.put(word, wordTracker.getOrDefault(word, 0) + 1);
+        }
+
+        int queryTimes = reader.nextInt();
+        for (int j = 0; j < queryTimes; j++) {
+            String searchWord = reader.next();
+            int count = wordTracker.getOrDefault(searchWord, 0);
+            System.out.println(count);
+        }
+
+        reader.close();
+    }
+}
