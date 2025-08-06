@@ -1,0 +1,6 @@
+size = int(input())
+values = list(map(int, input().split()))
+counts = [0 for _ in range(100)]
+for num in values:
+    counts[num] += 1
+print(*counts)

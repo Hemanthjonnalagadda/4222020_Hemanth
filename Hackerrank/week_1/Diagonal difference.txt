@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class MatrixDiagonalDifference {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size = Integer.parseInt(scanner.nextLine());
+
+        int leftDiagonalSum = 0;
+        int rightDiagonalSum = 0;
+
+        for (int row = 0; row < size; row++) {
+            String[] elements = scanner.nextLine().split(" ");
+            for (int col = 0; col < size; col++) {
+                int value = Integer.parseInt(elements[col]);
+                if (row == col) {
+                    leftDiagonalSum += value;
+                }
+                if (row + col == size - 1) {
+                    rightDiagonalSum += value;
+                }
+            }
+        }
+
+        int difference = Math.abs(leftDiagonalSum - rightDiagonalSum);
+        System.out.println(difference);
+    }
+}
