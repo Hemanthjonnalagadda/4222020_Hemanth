@@ -1,0 +1,23 @@
+def get_ints():
+    return list(map(int, input().split()))
+
+number_of_tests = int(input())
+
+for test in range(number_of_tests):
+    size, threshold = get_ints()
+    first_list = get_ints()
+    second_list = get_ints()
+
+    first_list.sort()
+    second_list.sort(reverse=True)
+
+    meets_condition = True
+    for i in range(size):
+        if first_list[i] + second_list[i] < threshold:
+            meets_condition = False
+            break
+
+    if meets_condition:
+        print("YES")
+    else:
+        print("NO")

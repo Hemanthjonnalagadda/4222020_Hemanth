@@ -1,0 +1,13 @@
+import string
+
+def check_pangram(sentence):
+    letters_needed = set(string.ascii_lowercase)
+    present_letters = set(sentence.lower())
+    return letters_needed.issubset(present_letters)
+
+if __name__ == "__main__":
+    user_input = input().strip()
+    if check_pangram(user_input):
+        print("pangram")
+    else:
+        print("not pangram")
