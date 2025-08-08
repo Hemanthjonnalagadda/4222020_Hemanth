@@ -1,0 +1,11 @@
+length = int(input())
+numbers = list(map(int, input().split()))
+target_sum, segment_size = map(int, input().split())
+
+count = 0
+for start in range(length - segment_size + 1):
+    segment = numbers[start:start + segment_size]
+    if sum(segment) == target_sum:
+        count += 1
+
+print(count)
