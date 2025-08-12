@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class SockPairs {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int totalSocks = scanner.nextInt();
+        int pairCount = 0;
+
+        Set<Integer> singleSocks = new HashSet<>();
+
+        for (int i = 0; i < totalSocks; i++) {
+            int sockColor = scanner.nextInt();
+            if (singleSocks.contains(sockColor)) {
+                singleSocks.remove(sockColor);
+                pairCount++;
+            } else {
+                singleSocks.add(sockColor);
+            }
+        }
+
+        System.out.println(pairCount);
+        scanner.close();
+    }
+}
